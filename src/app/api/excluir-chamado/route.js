@@ -12,6 +12,8 @@ export async function DELETE(req) {
     const token = await getToken({
       req,
       secret: process.env.JWT_SECRET, // Ensure JWT_SECRET is set in .env.local
+      cookieName: "next-auth.session-token",
+      secureCookie: true,
     });
 
     if (!token) {
