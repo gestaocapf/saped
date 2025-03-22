@@ -1,0 +1,43 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("MYSQL_PRISMA_URL") 
+}
+
+model Ticket {
+  id          String   @id @default(cuid())
+  title       String   @db.VarChar(255)
+  content     String   @db.Text
+  isAnonymous Boolean  @default(false)
+  status      String   @default("Aberto") // Pode ser: "Aberto", "Em andamento", "Fechado"
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  categoryId String
+  category   Category @relation(fields: [categoryId], references: [id])
+
+  senderName       String? 
+  senderEnrollment String?
+  senderEmail      String?
+
+  assignedTo   User?    @relation(fields: [assignedToId], references: [id])
+  assignedToId  String? @db.VarChar(36) // Se for UUID, 36 caracteres
+  answer String?
+}
+
+model Category {
+  id       String   @id @default(uuid())
+  name     String   @unique()
+  tickets  Ticket[] 
+}
+
+model User {
+  id        String   @id @default(uuid())
+  name      String
+  email     String   @unique()
+  password  String   
+  tickets   Ticket[]
+}
