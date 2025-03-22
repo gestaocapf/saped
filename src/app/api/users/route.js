@@ -8,7 +8,7 @@ export async function GET(req) {
   try {
     const token = await getToken({
       req,
-      secret: process.env.NEXT_JWT_SECRET, // Ensure JWT_SECRET is set in .env.local
+      secret: process.env.JWT_SECRET, // Ensure JWT_SECRET is set in .env.local
     });
 
     if (!token) {
