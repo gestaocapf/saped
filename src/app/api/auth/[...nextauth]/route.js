@@ -8,7 +8,7 @@ export const authOptions = {
   providers: [
     GoogleProvider({
       clientId: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID,
-      clientSecret: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_SECRET,
+      clientSecret: process.env.CLIENT_SECRET,
     }),
   ],
   session: {
@@ -47,7 +47,7 @@ export const authOptions = {
     },
   },
 
-  secret: process.env.NEXT_PUBLIC_JWT_SECRET, // Ensure this is set in your .env.local
+  secret: process.env.JWT_SECRET, // Ensure this is set in your .env.local
 
   cookies: {
     sessionToken: {
