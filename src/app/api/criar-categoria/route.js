@@ -8,7 +8,7 @@ export async function POST(req) {
   try {
     const token = await getToken({
       req,
-      secret: process.env.JWT_SECRET,
+      secret: process.env.NEXT_PUBLIC_JWT_SECRET,
     });
 
     if (!token) {

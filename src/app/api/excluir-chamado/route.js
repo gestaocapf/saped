@@ -11,7 +11,7 @@ export async function DELETE(req) {
   try {
     const token = await getToken({
       req,
-      secret: process.env.JWT_SECRET, // Ensure JWT_SECRET is set in .env.local
+      secret: process.env.NEXT_PUBLIC_JWT_SECRET, // Ensure JWT_SECRET is set in .env.local
     });
 
     if (!token) {
