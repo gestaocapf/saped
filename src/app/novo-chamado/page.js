@@ -69,7 +69,6 @@ const Chamado = () => {
 
     if (!isTermsAccepted)
       newErrors.terms = "Você precisa aceitar os termos e condições.";
-
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -78,13 +77,13 @@ const Chamado = () => {
     e.preventDefault();
     if (validate()) {
       const ticketData = {
-        title: formData.title, // Corrigido de "assunto" para "title"
-        categoryId: formData.category, // Corrigido de "categoria" para "category"
-        content: formData.content, // Corrigido de "descricao" para "content"
+        title: formData.title,
+        categoryId: formData.category,
+        content: formData.content,
         isAnonymous,
-        senderName: isAnonymous ? "" : formData.senderName, // Corrigido de "nome" para "senderName"
-        senderEnrollment: isAnonymous ? "" : formData.senderEnrollment, // Corrigido de "matricula" para "senderEnrollment"
-        senderEmail: isAnonymous ? "" : formData.senderEmail, // Corrigido de "email" para "senderEmail"
+        senderName: isAnonymous ? "" : formData.senderName,
+        senderEnrollment: isAnonymous ? "" : formData.senderEnrollment,
+        senderEmail: isAnonymous ? "" : formData.senderEmail,
       };
 
       setIsLoading(true);
