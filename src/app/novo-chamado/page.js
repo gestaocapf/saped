@@ -143,7 +143,6 @@ const Chamado = () => {
             placeholder="Assunto"
             value={formData.title} // Corrigido de "assunto" para "title"
             onChange={handleChange}
-            minLength={10}
             className="w-full pl-[14px] xl:w-[400px] pr-4 py-2 text-[13px] text-[#7B7B7B] border rounded-md focus:outline-none focus:ring-0"
           />
           {errors.title && (
@@ -191,7 +190,6 @@ const Chamado = () => {
             name="content" // Corrigido de "descricao" para "content"
             placeholder="Descrição"
             value={formData.content} // Corrigido de "descricao" para "content"
-            minLength={200}
             onChange={handleChange}
             className="w-full pl-[14px] pr-4 py-2 h-[201px] text-[13px] text-[#7B7B7B] border rounded-md focus:outline-none focus:ring-0"
           />

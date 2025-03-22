@@ -27,17 +27,17 @@ export async function POST(request) {
         { status: 400 }
       );
     }
-    if (title.length < 10) {
-      return res
-        .status(400)
-        .json({ error: "Title must be at least 10 characters long." });
-    }
+    // if (title.length < 10) {
+    //   return res
+    //     .status(400)
+    //     .json({ error: "Title must be at least 10 characters long." });
+    // }
 
-    if (content.length < 200) {
-      return res
-        .status(400)
-        .json({ error: "Content must be at least 300 characters long." });
-    }
+    // if (content.length < 200) {
+    //   return res
+    //     .status(400)
+    //     .json({ error: "Content must be at least 300 characters long." });
+    // }
 
     const newTicket = await prisma.ticket.create({
       data: {
