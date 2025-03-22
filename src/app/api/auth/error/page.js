@@ -1,11 +1,7 @@
 "use client";
 import Navbar from "@/components/Navbar";
-import { useSearchParams } from "next/navigation";
 
 export default function AuthErrorPage() {
-  const searchParams = useSearchParams();
-  const error = searchParams.get("error");
-
   return (
     <div>
       <Navbar />
@@ -20,9 +16,8 @@ export default function AuthErrorPage() {
         </a>
 
         <p className="mt-2 text-sm w-[400px] text-center text-red-500">
-          {error === "AccessDenied"
-            ? "Você não tem permissão para acessar esta aplicação. Caso acredite que isso seja um erro, consulte o CAPF."
-            : "Ocorreu um erro inesperado."}
+          Ocorreu um erro inesperado. Consulte o CAPF para obter mais
+          informações.
         </p>
       </div>
     </div>
