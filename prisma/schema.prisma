@@ -25,7 +25,7 @@ model Ticket {
 
   assignedTo   User?    @relation(fields: [assignedToId], references: [id])
   assignedToId  String? @db.VarChar(36) // Se for UUID, 36 caracteres
-  answer String?
+  answer String? @db.Text
 }
 
 model Category {
